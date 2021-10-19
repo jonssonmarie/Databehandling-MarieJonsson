@@ -27,7 +27,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # a) read the data
-total_pop_sweden = pd.read_excel("../Data/komtopp50_2020.xlsx", sheet_name="Totalt", skiprows=6)
+total_pop_sweden = pd.read_excel("../../Data/komtopp50_2020.xlsx", sheet_name="Totalt", skiprows=6)
 total_pop_sweden.head()
 total_pop_sweden.info()
 #print(total_pop_sweden.describe())

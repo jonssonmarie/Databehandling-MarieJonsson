@@ -15,9 +15,8 @@ Create this DataFrame from scratch:
      Use this number to create a new column in your sorted DataFrame named: Population (%).
      This column should be filled with percentage of the Swedish population for each city.
 """
-from os import truncate
-
 import pandas as pd
+
 cities = {"Kommun" : ["Malmö", "Stockholm", "Uppsala", "Göteborg"], "Population" : [347949, 975551, 233839, 583056]}
 
 # a) print dataframe

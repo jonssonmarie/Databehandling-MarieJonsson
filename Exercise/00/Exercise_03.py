@@ -22,9 +22,10 @@ import matplotlib.pyplot as plt
 
 
 # a) read the data and clean your data
-total_population = pd.read_excel("../Data/komtopp50_2020.xlsx", sheet_name="Totalt", skiprows=6)
-women_population = pd.read_excel("../Data/komtopp50_2020.xlsx", sheet_name="Kvinnor", skiprows=6)
-male_population = pd.read_excel("../Data/komtopp50_2020.xlsx", sheet_name="Män", skiprows=6)
+# a) read the data and clean your data
+total_population = pd.read_excel("../../Data/komtopp50_2020.xlsx", sheet_name="Totalt", skiprows=6)
+women_population = pd.read_excel("../../Data/komtopp50_2020.xlsx", sheet_name="Kvinnor", skiprows=6)
+male_population = pd.read_excel("../../Data/komtopp50_2020.xlsx", sheet_name="Män", skiprows=6)
 
 column_dict = {2020: "Rang 2020", 2019: "Rang 2019", "Unnamed: 2": "Kommun",
                "2020.1": "Folkmängd 2020", "2019.1": "Folkmängd 2019", "%": "Förändring"}

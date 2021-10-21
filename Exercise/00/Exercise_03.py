@@ -22,46 +22,53 @@ import matplotlib.pyplot as plt
 
 
 # a) read the data and clean your data
-# a) read the data and clean your data
 total_population = pd.read_excel("../../Data/komtopp50_2020.xlsx", sheet_name="Totalt", skiprows=6)
 women_population = pd.read_excel("../../Data/komtopp50_2020.xlsx", sheet_name="Kvinnor", skiprows=6)
 male_population = pd.read_excel("../../Data/komtopp50_2020.xlsx", sheet_name="Män", skiprows=6)
 
-column_dict = {2020: "Rang 2020", 2019: "Rang 2019", "Unnamed: 2": "Kommun",
+women_population = women_population.replace('.', 0.0)
+
+#
+header_dict = {2020: "Rang 2020", 2019: "Rang 2019", "Unnamed: 2": "Kommun",
                "2020.1": "Folkmängd 2020", "2019.1": "Folkmängd 2019", "%": "Förändring"}
 
 
-# rename and clean
-def rename_columns(col_dict, *population):
+# rename header
+def rename_header(col_dict, *population):
     [populate.rename(columns=col_dict, inplace=True) for populate in population]
 
 
-rename_columns(column_dict, total_population, women_population, male_population)
+# call func rename_header
+rename_header(header_dict, total_population, women_population, male_population)
 
-# add new columns
+# add new columns to two DataFrame
 women_population["Kön"] = "Kvinna"
 male_population["Kön"] = "Man"
+
 
 # b) Merge the male and female DataFrames vertically and set index to "Kommun"
 women_male = (pd.concat([women_population, male_population])).drop(labels=["Rang 2020", "Rang 2019"], axis=1).set_index("Kommun")
 
 
 # c) Extract and change column name from the total DataFrame
-# dict for change columns name
-column_dict2 = {2020: "Rang 2020", 2019: "Rang 2019", "Folkmängd 2020": "Total Pop 2020",
+# dict for change header name
+header_dict2 = {2020: "Rang 2020", 2019: "Rang 2019", "Folkmängd 2020": "Total Pop 2020",
                "Folkmängd 2019": "Total Pop 2019", "Förändring": "Total förändring"}
-rename_columns(column_dict2, total_population)
+# call func rename_header
+rename_header(header_dict2, total_population)
 
+# drop two column
 delta_population = total_population.drop(labels=["Rang 2020", "Rang 2019"], axis=1)
 
 
 # d) Merge this data with the data in b)
-merged_kommun = women_male.merge(delta_population, left_on="Kommun", right_on="Kommun")
-#print(merged_kommun.info())
+total_population_gender = women_male.merge(delta_population, left_on="Kommun", right_on="Kommun")
+
 
 # Create barplots showing the gender populations of Swedens 10 largest and 10 smallest cities
-largest_10_cities = merged_kommun.sort_values(by="Folkmängd 2020", ascending=False).head(20)
-smallest_10_cities = merged_kommun.sort_values(by="Folkmängd 2020", ascending=True).head(20)
+largest_10_cities = total_population_gender.sort_values(by="Folkmängd 2020", ascending=False).head(20)
+smallest_10_cities = total_population_gender.sort_values(by="Folkmängd 2020", ascending=True).head(20)
+# ascending=True).tail(20) gives the smallest kommun in the botten and not i  the top. This is why I choose .head()
 
 fig, ax = plt.subplots(1, 2, dpi=100, figsize=(12,4))
 sns.barplot(data=largest_10_cities, x="Folkmängd 2020", y="Kommun", hue="Kön", orient="horizontal", ax=ax[0])
@@ -78,13 +85,13 @@ ax.pie((female_pop, male_pop), labels=("kvinnor", "män"), autopct='%1.1f%%',sta
 ax.axis("equal")
 
 # g) Create a barplot showing the cities with the five largest percentual gender difference in 2020
-
 five_largest_gender_diff = (abs(women_population["Folkmängd 2020"] - male_population["Folkmängd 2020"])
-                            /(women_population["Folkmängd 2020"] + male_population["Folkmängd 2020"])).sort_values(ascending=False).head(5)
+                            /(women_population["Folkmängd 2020"] + male_population["Folkmängd 2020"]))\
+                            .sort_values(ascending=False).head(5)
 
-print("five largest gender diff\n",five_largest_gender_diff)
 stad = delta_population.loc[abs((women_population["Folkmängd 2020"] - male_population["Folkmängd 2020"])
-                            /(women_population["Folkmängd 2020"] + male_population["Folkmängd 2020"])).isin((five_largest_gender_diff))]#.sort_values(by="Total förändring", ascending=False)
+                            /(women_population["Folkmängd 2020"] + male_population["Folkmängd 2020"]))
+                            .isin((five_largest_gender_diff))]
 
 fig, ax = plt.subplots(dpi=100)
 ax = sns.barplot(data=stad, x="Kommun", y="Total förändring")
@@ -98,7 +105,15 @@ kommun = delta_population.loc[delta_population["Total förändring"].isin(larges
 fig, ax = plt.subplots(dpi=100)
 ax = sns.barplot(data=kommun, x='Kommun', y='Total förändring')
 ax.set_title("Top 5 cities with largest populational growth")
-plt.show()
 
 # i) Feel free to investigate other questions you are interested in using these datasets.
+women_change_up = women_male[women_male["Kön"] == "Kvinna"].reset_index().sort_values(by="Förändring", ascending=False).head(5)
+women_change_down = women_male[women_male["Kön"] == "Kvinna"].reset_index().sort_values(by="Förändring", ascending=True).head(5)
+male_change_up = women_male[women_male["Kön"] == "Man"].reset_index().sort_values(by="Förändring", ascending=False).head(5)
+male_change_down = women_male[women_male["Kön"] == "Man"].reset_index().sort_values(by="Förändring", ascending=True).head(5)
+data = pd.concat([women_change_up, women_change_down, male_change_up, male_change_down], axis=0).reset_index()
 
+fig, ax = plt.subplots(dpi=100)
+ax = sns.barplot(data=data, x="Förändring", y="Kommun", hue="Kön", orient="horizontal")
+ax.set_title("% change between 2019 - 2020")
+plt.show()

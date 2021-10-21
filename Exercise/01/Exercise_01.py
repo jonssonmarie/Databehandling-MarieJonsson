@@ -20,7 +20,7 @@ import openpyxl
 from data_utils import plot_columns
 
 # a) read file
-path = r"../../Data/student-mat-missing-data.csv"
+path = r"../../Data/student-mat-missing-data.csv" 
 student = pd.read_csv(path, sep=",")
 
 # b) initial explorations head(), info(), describe(), value_counts(), unique(), columns

@@ -8,6 +8,9 @@ numpy = "*"
 pandas = "*"
 matplotlib = "*"
 seaborn = "*"
+nbformat = "*"
+plotly-express = "*"
+openpyxl = "*"
 
 [dev-packages]
 

@@ -57,3 +57,4 @@ print(exo_planets.head())
 link2 = "https://en.wikipedia.org/wiki/FIFA_World_Cup"
 print(exo_planets.Object.unique())  # exo_planets["Obejct"].unique() fungerar också
 fifa_tables = pd.read_html(link2, match="Hosts")[0]
+print(fifa_tables)

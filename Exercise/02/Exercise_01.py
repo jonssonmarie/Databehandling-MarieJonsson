@@ -31,12 +31,8 @@ swe_demograf = pd.read_html(swe_demografi_link, match="Födda", thousands=" ")[0
 # Födda(int), Döda(int), Nativiteten(float) per 1000
 # b)
 df_col = swe_demograf[["År","Födda", "Döda"]]
-
-
-fig, ax = plt.subplots(1, 2, dpi=100, figsize=(13, 9))
-sns.lineplot(data=df_col, x="År", y="Döda", color="k", ax=ax[0])
-sns.lineplot(data=df_col, x="År", y="Födda", color="g", ax=ax[1])
-
+fig, ax = plt.subplots( dpi=100, figsize=(13, 9))
+sns.lineplot(data=df_col)
 
 
 # c)

@@ -22,11 +22,6 @@ nor_demografi = pd.read_html(nor_demografi_link, match="Födda", thousands=" ")[
     .rename(columns={"Unnamed: 0": "År", "Befolkning i tusentals (x 1000)": "Folkmängd"}).iloc[:, [0, 1, 8]]
 
 nor_demograf = fertility(nor_demografi)
-#swe_demograf["Fertilitet"] = swe_demograf["Fertilitet"].str.replace(",", ".")
-
-# prints
-print(swe_demograf.head())
-print(nor_demograf.head())
 
 # plot
 fig, ax = plt.subplots(1,2, dpi=100, figsize=(15,10))

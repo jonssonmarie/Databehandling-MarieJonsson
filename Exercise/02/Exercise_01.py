@@ -26,7 +26,7 @@ import seaborn as sns
 # a)
 swe_demografi_link = "https://sv.wikipedia.org/wiki/Sveriges_demografi"
 
-swe_demograf = pd.read_html(swe_demografi_link, match="Födda", thousands=" ")[0].rename(columns={"Unnamed: 0" :"År"})
+swe_demograf = pd.read_html(swe_demografi_link, match="Födda", thousands=" ", decimal=",")[0].rename(columns={"Unnamed: 0" :"År"})
 
 # Födda(int), Döda(int), Nativiteten(float) per 1000
 # b)
@@ -44,15 +44,19 @@ swe_demograf_1570to1865["År"] = swe_demograf_1570to1865["År"].astype(int)
 
 
 # d) Now concatenate this with the table from 1900 so that you have population data from 1570 to 2020.
-swe_demograf["Folkmängd"] = swe_demograf["Folkmängd"].astype(int)
-swe_demograf["År"] = swe_demograf["År"].astype(int)
+def population_data(df):
+    df["Folkmängd"] = df["Folkmängd"].astype(int)
+    df["År"] = df["År"].astype(int)
 
-swe_demograf = swe_demograf.iloc[:, :2]
+    df = df.iloc[:, :2]
 
-swe_demografi_1570to2020 = pd.concat([swe_demograf_1570to1865, swe_demograf], axis=0, join="outer").reset_index(drop=True)
-print(swe_demografi_1570to2020.info())
+    swe_demografi_1570to2020 = pd.concat([swe_demograf_1570to1865, df], axis=0, join="outer").reset_index(drop=True)
+    print(swe_demografi_1570to2020.info())
+    return swe_demografi_1570to2020
 
+
+population_data(swe_demograf)
 # e) Plot
 fig, ax = plt.subplots(dpi=100, figsize=(13, 9))
-sns.lineplot(data=swe_demografi_1570to2020, x="År", y="Folkmängd", color="r").set(title= "1570 - 2020")
+sns.lineplot(data=population_data(swe_demograf), x="År", y="Folkmängd", color="r").set(title= "1570 - 2020")
 plt.show()

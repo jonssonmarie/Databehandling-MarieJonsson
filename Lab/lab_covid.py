@@ -1,0 +1,3 @@
+"""
+Laboration - Covid-19
+"""

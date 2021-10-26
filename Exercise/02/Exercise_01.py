@@ -33,11 +33,10 @@ swe_demograf = pd.read_html(swe_demografi_link, match="Födda", thousands=" ")[0
 df_col = swe_demograf[["År","Födda", "Döda"]]
 
 
-fig, ax = plt.subplots(dpi=100)
-sns.lineplot(data=df_col, x="År", y="Döda", color="k")
-sns.lineplot(data=df_col, x="År", y="Födda", color="g")
-plt.title("Född - grön  och Död - svart")
-plt.show()
+fig, ax = plt.subplots(1, 2, dpi=100, figsize=(13, 9))
+sns.lineplot(data=df_col, x="År", y="Döda", color="k", ax=ax[0])
+sns.lineplot(data=df_col, x="År", y="Födda", color="g", ax=ax[1])
+
 
 
 # c)
@@ -58,6 +57,6 @@ swe_demografi_1570to2020 = pd.concat([swe_demograf_1570to1865, swe_demograf], ax
 print(swe_demografi_1570to2020.info())
 
 # e) Plot
-fig, ax = plt.subplots(dpi=100)
+fig, ax = plt.subplots(dpi=100, figsize=(13, 9))
 sns.lineplot(data=swe_demografi_1570to2020, x="År", y="Folkmängd", color="r").set(title= "1570 - 2020")
 plt.show()

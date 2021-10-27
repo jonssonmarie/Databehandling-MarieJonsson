@@ -134,7 +134,7 @@ def stapel_plot(df):
     plotly.offline.plot(fig2, filename=r'Visualiseringar/dos2_vaccinated.html')
 
 
-#stapel_plot(sum_column(lan_namn, vaccin_cases))
+stapel_plot(sum_column(lan_namn, vaccin_cases))
 
 """
 # Hur få in båda i samma plot så man kan jämföra?

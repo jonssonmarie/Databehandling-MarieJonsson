@@ -11,6 +11,8 @@ seaborn = "*"
 nbformat = "*"
 plotly-express = "*"
 openpyxl = "*"
+python-dotenv = "*"
+requests = "*"
 
 [dev-packages]
 ipykernel = "*"

@@ -49,27 +49,27 @@ stocks = pd.concat(stock_list, axis=1)
 stocks.to_csv("stocks.csv", sep=",")
 """
 
-stocks = pd.read_csv("stocks.csv")
-stocks.head()
-stocks.info()
+stocks = pd.read_csv("stocks.csv", index_col=0, parse_dates=True)
+#stocks.head()
+#stocks.info()
 
 # subplots
-fig, ax = plt.subplots(2,2, dpi=100, figsize=(12,6))
-#print(ax.shape)             # ger (2,2)
-#print(ax.flatten().shape)  # ger (4,)
+fig, axes = plt.subplots(2,2, dpi=100, figsize=(12,6))
+#print(axes.shape)
+#print(axes.flatten().shape)
 
 stock_2021 = stocks.loc["2021"]
-stock_names = dict(APPL ="Apple", NVDA= "Nvidia", TSLA="Tesla", IBM = "IBM")
 
-for ax, symbol in zip(ax.flatten(), stock_names):
-    print(symbol)
+stock_names = dict(AAPL="Apple", NVDA = "Nvidia", TSLA = "Tesla", IBM = "IBM")
+for ax, symbol in zip(axes.flatten(), stock_names):
+    #print(symbol)
     sns.lineplot(data=stock_2021, x=stock_2021.index, y=symbol, ax=ax)
     ax.tick_params(axis="x", rotation=45)
-    ax.set(title=f"{stock_names[symbol]}", ylabel="Price in dollars")
+    ax.set(title=f"{stock_names[symbol]}", ylabel="Price in dollars $")
 
-fig.thight_layout()
+fig.tight_layout()
 fig.suptitle("Stocks during 2021", y=1.03, fontweight="bold")
-
+plt.savefig("stocks2021.png", facecolor="white")
 
    
 

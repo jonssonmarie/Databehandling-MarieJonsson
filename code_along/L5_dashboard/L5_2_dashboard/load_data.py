@@ -4,7 +4,7 @@ import pandas as pd
 # pipenv install dash
 
 
-df = pd.read_csv(r"data/AAPL_TIME_SERIES_DAILY.csv")
+df = pd.read_csv("../data/AAPL_TIME_SERIES_DAILY.csv")
 print(df.head())
 
 

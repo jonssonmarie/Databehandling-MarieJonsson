@@ -7,6 +7,7 @@ from load_data import StockDataLocal
 from dash.dependencies import Output, Input
 import matplotlib.pyplot as plt
 import plotly_express as px
+from time_filtering import filter_time 
 
 stock_data_object = StockDataLocal()
 
@@ -40,21 +41,23 @@ app.layout = html.Div([
 ])
 
 @app.callback(
-    Output("stock_graph", "figure"),  # output är bakgrund (axlar)
-    Input("stock-picker-dropdown", "value"),   # input är graph
+    Output("stock-graph", "figure"), # output är bakgrund (axlar)
+    Input("stock-picker-dropdown", "value"), # input är graph
     Input("time-slider", "value")
-            )
+)
 
 def update_graph(stock, time_index):
     dff_daily, dff_intraday = df_dict[stock]
 
     dff = dff_intraday if time_index <= 2 else dff_daily
+    
+    # maps 0-6 to number of days
+    days = {i: day for i, day in enumerate([1, 7, 30, 90, 365, 365*5])}
+    dff = dff if time_index == 6 else filter_time(dff, days[time_index])
 
     fig = px.line(dff, x= dff.index, y="close")
     return fig # fig object goes int Output property i.e. figure property
     
-
-
 
 if __name__ == "__main__":
     app.run_server(debug=True)

@@ -13,6 +13,7 @@ plotly-express = "*"
 openpyxl = "*"
 python-dotenv = "*"
 requests = "*"
+dash = "*"
 
 [dev-packages]
 ipykernel = "*"

@@ -15,7 +15,7 @@ def bar_plot(df, x_value, y_value, an_title, color_name, file_path) -> None:
     :param file_path: str   path to place to save the plot
     :return: None
     """
-    fig = px.bar(df, x=x_value, y=y_value, barmode='group', color=color_name, labels={"variable": "", "value": "Antal"},
+    fig = px.bar(df, x=x_value, y=y_value, barmode='group', color=color_name, labels={"variable": "", "value": "Antal/Amount"},
                  title=an_title)
     plotly.offline.plot(fig, filename=file_path)
 

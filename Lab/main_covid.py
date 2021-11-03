@@ -13,6 +13,7 @@ from statistic_covid import statistic_vaccin, statistic_population
 from return_dose import dose_region, dose_sverige, dose_sverige_tot
 import lab_covid_task4
 
+
 def add_yearweek(df) -> object:
     """
     :param df: dataFrame object

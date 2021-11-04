@@ -15,7 +15,8 @@ def bar_plot(df, x_value, y_value, an_title, color_name, file_path) -> None:
     :param file_path: str   path to place to save the plot
     :return: None
     """
-    fig = px.bar(df, x=x_value, y=y_value, barmode='group', color=color_name, labels={"variable": "", "value": "Antal/Amount"},
+    fig = px.bar(df, x=x_value, y=y_value, barmode='group', color=color_name,
+                 labels={"variable": "", "value": "Antal / Amount"},
                  title=an_title)
     plotly.offline.plot(fig, filename=file_path)
 
@@ -27,7 +28,7 @@ def pie_plot(df) -> None:
     """
     fig1 = px.pie(df, values="Totalt_antal_avlidna", title="Antal avlidna per kön", names="Kön")
     fig1.update_traces(textinfo="label+percent")
-    plotly.offline.plot(fig1, filename=r'Visualiseringar\totalt_antal_avlidna_per_kön_task3.html')
+    plotly.offline.plot(fig1, filename=r'Visualiseringar\task_3_totalt_antal_avlidna_per_kön.html')
 
 
 def compare_infected_iva_plot(df) -> None:
@@ -42,7 +43,7 @@ def compare_infected_iva_plot(df) -> None:
                   title="Antal covidfall och antal IVA vårdade",
                   labels={"variable": "", "value": "Antal personer"})
     fig.update_yaxes(type="log")
-    plotly.offline.plot(fig, filename=r'Visualiseringar\Antal_covid_och_iva_vårdade_task3.html')
+    plotly.offline.plot(fig, filename=r'Visualiseringar\task_3_Antal_covid_och_iva_vårdade.html')
 
 
 def adjust_plot(place, y_label) -> None:
@@ -58,7 +59,7 @@ def adjust_plot(place, y_label) -> None:
     place.set_ylabel(y_label)
     place.grid()
     plt.tight_layout()
-    plt.savefig(r"Visualiseringar\covid_data_task_1.png")
+    plt.savefig(r"Visualiseringar\task_1_covid_data.png")
 
 
 def plot_covid_2x2(df) -> None:

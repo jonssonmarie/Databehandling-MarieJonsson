@@ -62,7 +62,7 @@ Cirka 3 700 tidigare bekräftade covid-19 fall har tagits bort ur statistiken me
 
 ### Antal avlidna per kön
 #### Plot:  
-totalt_iva_avlidna_per_sex_task3.html
+totalt_iva_avlidna_per_sex_task3.html  
 
 | <img src="Smittad_insats_kon_alder1.png" width=600 >
  

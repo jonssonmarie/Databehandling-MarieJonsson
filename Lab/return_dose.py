@@ -1,6 +1,6 @@
 
 def dose_region(df, region, dos_num) -> object:
-    """
+    """Sort vaccination status per Län/Region
     :param df: DataFrame object
     :param region: str
     :param dos_num:  str
@@ -11,7 +11,7 @@ def dose_region(df, region, dos_num) -> object:
 
 
 def dose_sverige(df, region, dos_num) -> object:
-    """
+    """ Sort vaccination status for Sweden
     :param df: DataFrame object
     :param region: str
     :param dos_num: str
@@ -22,7 +22,7 @@ def dose_sverige(df, region, dos_num) -> object:
 
 
 def dose_sverige_tot(df, region) -> object:
-    """
+    """Sort vaccination on total dose 1 and 2 per Län/Region
     :param df: DataFrame object
     :param region: str
     :param dos_num: str

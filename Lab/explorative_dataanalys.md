@@ -78,7 +78,9 @@ task_4_WHO_covid_kumulativ_deaths_per100000_below_100.html
 Det är många länder som inte rapporterar in någon data alls.  
 En del länder har fler dödsfall än antal smittade jämfört med rikare länder.
 Rent krasst är det svårt att göra en analys då datan inte är ok.   
-Men Peru utmärker sig med förhållande smittade/döda. Länderna i EU ligger många över 200 döda per 100000. etc fortsätt här
+Men Peru utmärker sig med 600 döda per 100000.  
+Länderna i EU ligger en del över 200 döda per 100000 men många mellan 200 - 500.
+De länder som ligger under 100 döda per 100000 är oftast de länder som inte rapporterar.  
 
 
 ### EU / EEA

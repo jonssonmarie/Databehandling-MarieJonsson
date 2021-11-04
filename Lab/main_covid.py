@@ -1,7 +1,7 @@
 """
 Laboration - Covid-19
 
-Sveriges befolkning 
+Sveriges befolkning
 http://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__BE__BE0101__BE0101A/BefolkningNy/?loadedQueryId=102786&timeType=top&timeValue=1
 """
 import pandas as pd
@@ -24,7 +24,7 @@ def add_yearweek(df) -> object:
     return df["Vecka"]
 
 
-def sum_per_column(names, df) -> object:
+def sum_per_column_swe(names, df) -> object:
     """
     calculate sum from a columns for a key and save to a dataframe
     :param names: list of strings
@@ -42,7 +42,7 @@ def sum_per_column(names, df) -> object:
     return all_dos
 
 
-def main():
+def main() -> None:
     start = time.time()
     covid_path = r"../Data/Folkhalsomyndigheten_Covid19.xlsx"
     vaccine_path = r"../Data/Folkhalsomyndigheten_Covid19_Vaccine.xlsx"
@@ -70,41 +70,40 @@ def main():
     num_befolkning = statistic_vaccin(vaccine_cases)
     lan_namn = vaccine_cases["Län_namn"].unique()
 
-    dos1_dos2 = sum_per_column(lan_namn, vaccine_cases)
-    bar_plot(dos1_dos2, "Län", ["dos 1", "dos 2"], "Antal dos 1 respektive dos 2 per län", None,
-             r'Visualiseringar\dos1_dos2_task_2.html')
+    dos1_dos2 = sum_per_column_swe(lan_namn, vaccine_cases)
+    bar_plot(dos1_dos2, "Län", ["dos 1", "dos 2"], "Number of dose 1 and dose 2 per 'Län'", None,
+             r'Visualiseringar\task_2_dose1_dose2.html')
 
     bar_plot(covid_per_sex, "Kön", ["Totalt_antal_intensivvårdade", "Totalt_antal_avlidna"],
-             "Antal covidfall per kön", None, r'Visualiseringar\totalt_iva_avlidna_per_sex_task3.html')
+             "Number of covid cases per sex", None, r'Visualiseringar\task_3_total_iva_deceased_per_sex.html')
 
     bar_plot(amount_per_agegroup, "Åldersgrupp", ["Totalt_antal_intensivvårdade", "Totalt_antal_avlidna"],
-             "Totalt antal per åldersgrupp", None, r'Visualiseringar\Totalt_antal_per_åldersgrupp_task3.html')
+             "Totalt antal per åldersgrupp", None, r'Visualiseringar\task_3_Totalt_antal_per_åldersgrupp.html')
 
     dos1_region = dose_region(vaccine_agegroup, "| Sverige |", "Minst 1 dos")
     bar_plot(dos1_region, "Region", ["Antal vaccinerade"], "Antal dos 1 per åldersgrupp per region",
-             "Åldersgrupp", r'Visualiseringar\Antal_vaccinerade_åldersgrupp_dos1_region_task2e.html')
+             "Åldersgrupp", r'Visualiseringar\task_2e_Antal_vaccinerade_åldersgrupp_dos1_region.html')
 
     dos2_region = dose_region(vaccine_agegroup, "| Sverige |", "Färdigvaccinerade")
     bar_plot(dos2_region, "Region", ["Antal vaccinerade"], "Antal dos 2 per åldersgrupp per region",
-             "Åldersgrupp", r'Visualiseringar\Antal_vaccinerade_åldersgrupp_dos2_region_task2e.html')
+             "Åldersgrupp", r'Visualiseringar\task_2e_Antal_vaccinerade_åldersgrupp_dos2_region.html')
 
     dos1_sverige = dose_sverige(vaccine_agegroup, "| Sverige |", "Minst 1 dos")
     bar_plot(dos1_sverige, "Åldersgrupp", ["Antal vaccinerade"], "Antal dos 1 per åldersgrupp i Sverige",
-             "Åldersgrupp", r'Visualiseringar\Antal_vaccinerade_åldersgrupp_dos1_Sverige_task2f.html')
+             "Åldersgrupp", r'Visualiseringar\task_2f_Antal_vaccinerade_åldersgrupp_dos1_Sverige.html')
 
     dos2_sverige = dose_sverige(vaccine_agegroup, "| Sverige |", "Färdigvaccinerade")
     bar_plot(dos2_sverige, "Åldersgrupp", ["Antal vaccinerade"], "Antal dos 2 per åldersgrupp i Sverige",
-             "Åldersgrupp", r'Visualiseringar\Antal_vaccinerade_åldersgrupp_dos2_Sverige_task2f.html')
+             "Åldersgrupp", r'Visualiseringar\task_2f_Antal_vaccinerade_åldersgrupp_dos2_Sverige.html')
 
-    # en extra då jag ville se doser mot totala folkmängden
+    # en extra då jag ville se doser mot totala folkmängden - den gör jag ingen analys på
     vaccin_sverige_totalt = dose_sverige_tot(vaccine_agegroup, "| Sverige |")
     sve_befolking = statistic_population(swe_pop_age0to15, num_befolkning, swe_population)
     lst = ["| Sverige |", "Totalt", sve_befolking, 0.0, "Totala befolkning"]
     swe_befolkning = pd.DataFrame(lst, index=("Region", "Åldersgrupp", "Antal vaccinerade", "Andel vaccinerade", "Vaccinationsstatus"  )).T
     vaccin_befolkning = pd.concat((vaccin_sverige_totalt, swe_befolkning), axis=0)
-
     bar_plot(vaccin_befolkning, "Vaccinationsstatus", "Antal vaccinerade",  "Antal vaccinerade i Sverige och befolkningsmängd",
-             "Vaccinationsstatus", r'Visualiseringar\Antal_vaccinerade_totalt_Sverige_extra.html')
+             "Vaccinationsstatus", r'Visualiseringar\tom_extra_Antal_vaccinerade_totalt_Sverige.html')
 
     pie_plot(covid_per_sex)
 

@@ -3,19 +3,18 @@
 ## Uppgift 3
 ### Antal avlidna per kön
 #### Plot: totalt_antal_avlidna_per_kön_task3.html 
-Kvinna 45.2 %
-Man 54.7 %
+Kvinna  Man 
+45.2 %  54.7 %
+Folkhälsomyndighetens data inne håller inte data som anger kön och ålder. Så jag kollade i socialstyrelsens data för att förklara detta.
+Fån 50 år ålder så ökar sannolikheten att män får covid jämfört med kvinnor (3.9 vs 1.7 %). För att ligga närmare i åldrarna 75 -79. Över 85 års ålder så ökar andelen kvinnor markant. Detta då antalet kvinnor i den åldern är fler än männen. Är man under 50 så är risken att få covid under 1 % oavsett kön.
+Denna data var redan sammanställd hos socialstyrelsen så kod gjordes inte.
 
-Folkhälsomyndighetens data inne håller inte data som anger kön och ålder. Så jag fick titta in i socialstyrelsens data för att förklara detta.
-Fån 50 år ålder så ökar sannolikheten att män får covid jämfört med kvinnor (3.9 vs 1.7 %). För att ligga närmare i 75 -79. Över 85 så ökar andelen kvinnor markant. Detta då antalet kvinnor i den åldern är fler än männen. Är man under 50 så är risken att få covid under 1 % oavsett kön
-Danna data var redan sammanställd och kod för detta var inte vettigt.
-
-Inte åldersbalanserad statisk per region - är det många gamal i en region blir dödstalet högre än för ett större region med större andel yngre befolkning
 
 
 ### Totalt antal per åldersgrupp task 3 (vårdade/ avlidna)
 #### Plot: Totalt_antal_per_åldersgrupp_task3.html
-Det är också flest män som dött i covid19 i alla åldersgrupper, förutom i den som är 90år och äldre. I den äldsta åldersgruppen var det fler kvinnor som dog, vilket kan förklaras med att det finns många fler kvinnor än män i den gruppen.
+Det är flest män som dött i covid19 i alla åldersgrupper, förutom i den som är 90 år och äldre. 
+I den äldsta åldersgruppen var det fler kvinnor som dog, vilket kan förklaras med att det finns många fler kvinnor än män i den gruppen.
 Kvinnor har några få procent fler som hade högt blodtryck än män
 Högt blodtryck är den vanligaste förekomsten av samsjuklighet för avlidna i covid‑19. 
 Man har dock inte kunnat fastställa att det skulle vara en riskfaktor för att avlida i sjukdomen.

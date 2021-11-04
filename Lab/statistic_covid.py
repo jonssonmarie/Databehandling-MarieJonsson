@@ -1,3 +1,5 @@
+import pandas as pd
+
 
 def statistic_vaccin(vaccin) -> int:
     """
@@ -29,3 +31,22 @@ def statistic_population(age0to15, vaccine_pop_num, swe_pop_num) -> int:
     print(f"Sveriges folkmängd: {num_tot_pop}")
     print(f"0-15 år % av befolkningen {percent_age0to15:.2f} %")
     return num_tot_pop
+
+
+def statistic_eu_vaccin(names, df):
+    # "ReportingCountry", "Population", "FirstDose", "SecondDose"
+    procent_dos = []
+    i = 0
+    for name in names:
+        dos1 = df[(df["ReportingCountry"] == name)]["FirstDose"]
+        dos2 = df[(df["ReportingCountry"] == name)]["SecondDose"]
+        nat_pop = df[(df["ReportingCountry"] == name)]["Population"]
+        procent_dose1 = ((dos1/nat_pop)*100)[i]
+        procent_dose2 = ((dos2/nat_pop)*100)[i]
+        summery = [name, procent_dose1, procent_dose2]
+        procent_dos.append(summery)
+        i += 1
+    all_procent = pd.DataFrame(procent_dos, columns=("ReportingCountry", "procent_dose1", "procent_dose2"))
+    print(f"EU/EEA vaccinated dose 1 mean: {(all_procent['procent_dose1'].mean()):.1f} %")
+    print(f"EU/EEA vaccinated dose 2 mean: {(all_procent['procent_dose2'].mean()):.1f} %\n")
+    return all_procent

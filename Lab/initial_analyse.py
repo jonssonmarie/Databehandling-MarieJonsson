@@ -11,3 +11,4 @@ def analyse(df):
     print(df.tail(), "\n")
     print(df.columns, "\n")
     print(df.index, "\n")
+    

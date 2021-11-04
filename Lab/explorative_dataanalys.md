@@ -28,11 +28,6 @@ Andelen kvinnor som har högt blodtryck är något fler än män.
 Högt blodtryck är den vanligaste förekomsten av samsjuklighet för avlidna i covid‑19.  
 Man har dock inte kunnat fastställa att det skulle vara en riskfaktor för att avlida i sjukdomen.  
 Högt blodtryck är väldigt vanligt i den åldrade befolkningen och kan snarare antas spegla det.  
-Sjukdommar:  
-Högt blodtryck  
-Hjärt- och kärlsjukdom  
-Diabetes  
-Lungsjukdom  
   
 Majoriteten av de personer som dött i covid19 hade två eller flera av de sjukdommar som kan bidra till svårare symtom.  
 Av de som avled med covid 19 som underliggande dödsorsak under fösta halvåret 2020 hade 78 % varit inskrivna på sjukhus någon gång under femårsperioden 2015‑2019.
@@ -85,12 +80,17 @@ Rent krasst är det svårt att göra en analys då datan inte är ok.
 Men Peru utmärker sig med förhållande smittade/döda. Länderna i EU ligger många över 200 döda per 100000. etc fortsätt här
 
 
-### EU
+### EU / EEA
 #### Plot: 
 vaccin_eu_eea_task4.html  
-eu_eea_procent_task4.html
+eu_eea_procent_task4.html  
 
-4 länder ligger under 50% vaccineringsgrad i dos 1
-7 länder ligger under 50% vaccineringsgrad i dos 2
-ej klar
-
+Dos 1 vaccingeringsgrad  
+4 länder ligger under 50% vaccineringsgrad: BG, HR, RO, SK
+Ett land ligger under 30% vaccineringsgrad: BG (23%)  
+Medel dos 1 i EU/EEA: 62,1%  
+  
+Dos 2 vaccineringsgrad
+8 länder ligger under 50% vaccineringsgrad: BG, EE, HR, LV, PL, RO, SI, SK  
+Ett land ligger under 30% vaccineringsgrad: BG (17%)  
+Medel dos 2 i EU/EEA:  54,8%

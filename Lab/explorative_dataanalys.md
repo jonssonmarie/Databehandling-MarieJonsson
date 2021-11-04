@@ -64,7 +64,7 @@ Cirka 3 700 tidigare bekräftade covid-19 fall har tagits bort ur statistiken me
 #### Plot:  
 totalt_iva_avlidna_per_sex_task3.html
 
-| <img src="Smittad_insats_kon_alder.png" width=400 >
+| <img src="Smittad_insats_kon_alder.png" width=600 >
  
 https://www.socialstyrelsen.se/globalassets/sharepoint-dokument/dokument-webb/statistik/statistik-covid19-70-ar-och-aldre.xlsx  
 Filk: Smittade - insats - kön ålder  

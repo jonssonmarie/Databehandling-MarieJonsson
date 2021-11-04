@@ -83,7 +83,7 @@ bar_plot(who_cases_between, "Nation", ["Cases - cumulative total per 100000",
 
 bar_plot(who_cases_below_5000, "Nation", ["Cases - cumulative total per 100000",
                                           "Deaths - cumulative total per 100000"],
-         "Nations with number of cumulative covid cases per 100000 below 200 in the world ", None,
+         "Nations with number of cumulative covid cases per 100000 between 100 and 200 in the world ", None,
          r'Visualiseringar\task_4_WHO_covid_kumulativ_deaths_per100000_below_200.html')
 
 bar_plot(who_cases_below_100, "Nation", ["Cases - cumulative total per 100000",

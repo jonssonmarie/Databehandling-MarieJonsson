@@ -63,15 +63,9 @@ Cirka 3 700 tidigare bekräftade covid-19 fall har tagits bort ur statistiken me
 ### Antal avlidna per kön
 #### Plot:  
 totalt_iva_avlidna_per_sex_task3.html
-Kvinnor: 92,8 % var 70+, den stora gruppen 85+ är 57,7 % av totalen  
-Totalt'>' 70+'>' Under 70'>' 70‒74'>' 75‒79 '>' 80‒84 '>' 85+  
 
-6 428		 5 964		464			   417		 728		1 114		3 705  
-
-Män: 85 % var 70+, den stora gruppen 85+ är 38.9% av totalen  
-Totalt		70+		Under 70 		70‒74		75‒79		80‒84		85+  
-7 976		6 784	   1 192			858			1 243		1 577		3 106  
-källa: socialstyrelsen data fram till 25 oktober 2021  
+| <img src="Smittad_insats_kon_alder.png" width=200 >
+ 
 https://www.socialstyrelsen.se/globalassets/sharepoint-dokument/dokument-webb/statistik/statistik-covid19-70-ar-och-aldre.xlsx  
 Filk: Smittade - insats - kön ålder  
 https://www.socialstyrelsen.se/statistik-och-data/statistik/statistik-om-covid-19/statistik-om-covid-19-bland-aldre-efter-boendeform/

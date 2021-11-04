@@ -71,7 +71,7 @@ https://www.socialstyrelsen.se/statistik-och-data/statistik/statistik-om-covid-1
 #### Plot: 
 task_4_WHO_covid_kumulativ_per100000_above_500.html  
 task_4_WHO_covid_deaths_kumulativ_per100000_between_200_to_500.html  
-task_4_WHO_covid_kumulativ_per100000_below_200.html 
+task_4_WHO_covid_kumulativ_per100000_below_200.html  
 task_4_WHO_covid_kumulativ_per100000_below_100.html  
 
 

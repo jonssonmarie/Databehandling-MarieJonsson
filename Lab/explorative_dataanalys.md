@@ -3,7 +3,7 @@
 ## Uppgift 3
 ### Antal avlidna per kön
 #### Plot:  
-totalt_antal_avlidna_per_kön_task3.html  
+task_3_totalt_antal_avlidna_per_kön.html  
 #### Avlidna per kön
 Kvinnor 45.2 %  
 Män 54.7 %  
@@ -20,7 +20,7 @@ Flik: Övergripande statistik
   
 ### Totalt antal smittade, IVA vård per åldersgrupp 
 #### Plot:  
-Totalt_antal_per_åldersgrupp_task3.html  
+task_3_Totalt_antal_per_åldersgrupp.html  
 
 Det är flest män som dött i covid19 i alla åldersgrupper, förutom i den som är 90 år och äldre.  
 I den äldsta åldersgruppen var det fler kvinnor som dog, vilket kan förklaras med att det finns många fler kvinnor än män i den gruppen.
@@ -44,7 +44,7 @@ https://www.socialstyrelsen.se/statistik-och-data/statistik/statistik-om-covid-1
 
 ### Antal covidfall och antal på IVA under tid
 #### Plot:  
-Antal_covid_och_iva_vårdade_task3.html  
+task_3_Antal_covid_och_iva_vårdade.html  
   
 Kurvorna för antal smittade och antal IVA vårdade personer följs åt relativt bra.  
 Inrapporteringar släpar och därmed ges toppar och dalar ibland trots att de inte finns i egentlig mening.  
@@ -57,7 +57,7 @@ Cirka 3 700 tidigare bekräftade covid-19 fall har tagits bort ur statistiken me
 
 ### Antal avlidna per kön
 #### Plot:  
-totalt_iva_avlidna_per_sex_task3.html  
+task_3_totalt_iva_avlidna_per_sex.html  
 
 | <img src="Smittad_insats_kon_alder1.png" width=600 >
  
@@ -69,10 +69,10 @@ https://www.socialstyrelsen.se/statistik-och-data/statistik/statistik-om-covid-1
 ## Uppgift 4
 ### WHO
 #### Plot: 
-WHO_covid_deaths_kumulativ_per100000_between_200_to_500_task4.html  
-WHO_covid_kumulativ_per100000_above_500_task4.html  
-WHO_covid_kumulativ_per100000_below_100_task4.html  
-WHO_covid_kumulativ_per100000_below_200_task4.html 
+task_4_WHO_covid_deaths_kumulativ_per100000_between_200_to_500.html  
+task_4_WHO_covid_kumulativ_per100000_above_500.html  
+task_4_WHO_covid_kumulativ_per100000_below_100.html  
+task_4_WHO_covid_kumulativ_per100000_below_200.html 
 
 Det är många länder som inte rapporterar in någon data alls.  
 En del länder har fler dödsfall än antal smittade jämfört med rikare länder.
@@ -82,8 +82,8 @@ Men Peru utmärker sig med förhållande smittade/döda. Länderna i EU ligger m
 
 ### EU / EEA
 #### Plot: 
-vaccin_eu_eea_task4.html  
-eu_eea_procent_task4.html  
+task_4_vaccin_eu_eea.html  
+task_4_eu_eea_procent.html  
 
 Dos 1 vaccingeringsgrad  
 4 länder ligger under 50% vaccineringsgrad: BG, HR, RO, SK

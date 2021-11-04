@@ -64,7 +64,8 @@ Cirka 3 700 tidigare bekräftade covid-19 fall har tagits bort ur statistiken me
 #### Plot:  
 totalt_iva_avlidna_per_sex_task3.html
 Kvinnor: 92,8 % var 70+, den stora gruppen 85+ är 57,7 % av totalen  
-Totalt'<' 70+'<' Under 70'<' 70‒74'<' 75‒79 '<' 80‒84 '<' 85+  
+Totalt'>' 70+'>' Under 70'>' 70‒74'>' 75‒79 '>' 80‒84 '>' 85+  
+
 6 428		 5 964		464			   417		 728		1 114		3 705  
 
 Män: 85 % var 70+, den stora gruppen 85+ är 38.9% av totalen  

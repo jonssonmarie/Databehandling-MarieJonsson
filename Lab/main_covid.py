@@ -8,7 +8,7 @@ import pandas as pd
 import numpy as np
 import time
 from initial_analyse import analyse
-from many_plots import bar_plot, pie_plot, compare_infected_iva_plot, plot_covid_2x2
+from create_plots import bar_plot, pie_plot, compare_infected_iva_plot, plot_covid_2x2
 from statistic_covid import statistic_vaccin, statistic_population
 from return_dose import dose_region, dose_sverige, dose_sverige_tot
 import lab_covid_task4
@@ -71,29 +71,29 @@ def main() -> None:
     lan_namn = vaccine_cases["Län_namn"].unique()
 
     dos1_dos2 = sum_per_column_swe(lan_namn, vaccine_cases)
-    bar_plot(dos1_dos2, "Län", ["dos 1", "dos 2"], "Number of dose 1 and dose 2 per 'Län'", None,
+    bar_plot(dos1_dos2, "Län", ["dos 1", "dos 2"], "Number of dose 1 and dose 2 per 'Län'", "Antal", None,
              r'Visualiseringar\task_2_dose1_dose2.html')
 
     bar_plot(covid_per_sex, "Kön", ["Totalt_antal_intensivvårdade", "Totalt_antal_avlidna"],
-             "Number of covid cases per sex", None, r'Visualiseringar\task_3_total_iva_deceased_per_sex.html')
+             "Number of covid cases per sex", "Antal", None, r'Visualiseringar\task_3_total_iva_deceased_per_sex.html')
 
     bar_plot(amount_per_agegroup, "Åldersgrupp", ["Totalt_antal_intensivvårdade", "Totalt_antal_avlidna"],
-             "Totalt antal per åldersgrupp", None, r'Visualiseringar\task_3_Totalt_antal_per_åldersgrupp.html')
+             "Totalt antal per åldersgrupp", "Antal", None, r'Visualiseringar\task_3_Totalt_antal_per_åldersgrupp.html')
 
     dos1_region = dose_region(vaccine_agegroup, "| Sverige |", "Minst 1 dos")
-    bar_plot(dos1_region, "Region", ["Antal vaccinerade"], "Antal dos 1 per åldersgrupp per region",
+    bar_plot(dos1_region, "Region", ["Antal vaccinerade"], "Antal dos 1 per åldersgrupp per region", "Antal",
              "Åldersgrupp", r'Visualiseringar\task_2e_Antal_vaccinerade_åldersgrupp_dos1_region.html')
 
     dos2_region = dose_region(vaccine_agegroup, "| Sverige |", "Färdigvaccinerade")
-    bar_plot(dos2_region, "Region", ["Antal vaccinerade"], "Antal dos 2 per åldersgrupp per region",
+    bar_plot(dos2_region, "Region", ["Antal vaccinerade"], "Antal dos 2 per åldersgrupp per region", "Antal",
              "Åldersgrupp", r'Visualiseringar\task_2e_Antal_vaccinerade_åldersgrupp_dos2_region.html')
 
     dos1_sverige = dose_sverige(vaccine_agegroup, "| Sverige |", "Minst 1 dos")
-    bar_plot(dos1_sverige, "Åldersgrupp", ["Antal vaccinerade"], "Antal dos 1 per åldersgrupp i Sverige",
+    bar_plot(dos1_sverige, "Åldersgrupp", ["Antal vaccinerade"], "Antal dos 1 per åldersgrupp i Sverige", "Antal",
              "Åldersgrupp", r'Visualiseringar\task_2f_Antal_vaccinerade_åldersgrupp_dos1_Sverige.html')
 
     dos2_sverige = dose_sverige(vaccine_agegroup, "| Sverige |", "Färdigvaccinerade")
-    bar_plot(dos2_sverige, "Åldersgrupp", ["Antal vaccinerade"], "Antal dos 2 per åldersgrupp i Sverige",
+    bar_plot(dos2_sverige, "Åldersgrupp", ["Antal vaccinerade"], "Antal dos 2 per åldersgrupp i Sverige", "Antal",
              "Åldersgrupp", r'Visualiseringar\task_2f_Antal_vaccinerade_åldersgrupp_dos2_Sverige.html')
 
     # en extra då jag ville se doser mot totala folkmängden - den gör jag ingen analys på
@@ -103,7 +103,7 @@ def main() -> None:
     swe_befolkning = pd.DataFrame(lst, index=("Region", "Åldersgrupp", "Antal vaccinerade", "Andel vaccinerade", "Vaccinationsstatus"  )).T
     vaccin_befolkning = pd.concat((vaccin_sverige_totalt, swe_befolkning), axis=0)
     bar_plot(vaccin_befolkning, "Vaccinationsstatus", "Antal vaccinerade",  "Antal vaccinerade i Sverige och befolkningsmängd",
-             "Vaccinationsstatus", r'Visualiseringar\tom_extra_Antal_vaccinerade_totalt_Sverige.html')
+             "Antal", "Vaccinationsstatus", r'Visualiseringar\tom_extra_Antal_vaccinerade_totalt_Sverige.html')
 
     pie_plot(covid_per_sex)
 

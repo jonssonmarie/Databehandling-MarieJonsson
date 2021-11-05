@@ -8,7 +8,7 @@ https://www.ecdc.europa.eu/en/publications-data/data-national-14-day-notificatio
 import pandas as pd
 import numpy as np
 from initial_analyse import analyse
-from many_plots import bar_plot
+from create_plots import bar_plot
 from statistic_covid import statistic_eu_vaccin
 
 # paths to excel files
@@ -73,27 +73,27 @@ who_cases_below_100 = who_cases[(who_cases["Deaths - cumulative total per 100000
 # plots
 bar_plot(who_cases_above, "Nation", ["Cases - cumulative total per 100000",
                                      "Deaths - cumulative total per 100000"],
-         "Nations with number of cumulative covid cases per 100000 above 500 in the world ", None,
+         "Nations with number of cumulative covid cases per 100000 above 500 in the world ", "Amount", None,
          r'Visualiseringar\task_4_WHO_covid_cumulativ_deaths_per100000_above_500.html')
 
 bar_plot(who_cases_between, "Nation", ["Cases - cumulative total per 100000",
                                        "Deaths - cumulative total per 100000"],
-         "Nations with number of cumulative covid cases per 100000 below 500 and above 200 in the world", None,
+         "Nations with number of cumulative covid cases per 100000 below 500 and above 200 in the world", "Amount", None,
          r'Visualiseringar\task_4_WHO_covid_cumulativ_deaths_per100000_between_200_to_500.html')
 
 bar_plot(who_cases_below_5000, "Nation", ["Cases - cumulative total per 100000",
                                           "Deaths - cumulative total per 100000"],
-         "Nations with number of cumulative covid cases per 100000 between 100 and 200 in the world ", None,
+         "Nations with number of cumulative covid cases per 100000 below 200 in the world ", "Amount", None,
          r'Visualiseringar\task_4_WHO_covid_kumulativ_deaths_per100000_below_200.html')
 
 bar_plot(who_cases_below_100, "Nation", ["Cases - cumulative total per 100000",
                                          "Deaths - cumulative total per 100000"],
-         "Nations with number of cumulative covid cases per 100000 below 100 in the world ", None,
+         "Nations with number of cumulative covid cases per 100000 below 100 in the world ", "Amount", None,
          r'Visualiseringar\task_4_WHO_covid_kumulativ_deaths_per100000_below_100.html')
 
 bar_plot(ecdc_vaccine, "ReportingCountry", ["FirstDose", "SecondDose", "Population"],
-         "First and second vaccin dose EU/EEA", None, r'Visualiseringar\task_4_EU_EEA_vaccine.html')
+         "First and second vaccin dose EU/EEA", "Amount", None, r'Visualiseringar\task_4_EU_EEA_vaccine.html')
 
-bar_plot(precentage, "ReportingCountry", ["procent_dose1", "procent_dose2"], 
-         "% dose 1 and % dose 2 for each EU/EEA country", None,
-         r'Visualiseringar\task_4_EU_EEA_percent_task4.html')
+bar_plot(precentage, "ReportingCountry", ["procent_dose1", "procent_dose2"],
+         "Percentage dose 1 and dose 2 for each EU/EEA country", "Percentage", None,
+         r'Visualiseringar\task_4_EU_EEA_percent.html')

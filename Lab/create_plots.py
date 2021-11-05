@@ -5,7 +5,7 @@ import plotly_express as px
 import plotly
 
 
-def bar_plot(df, x_value, y_value, an_title, color_name, file_path) -> None:
+def bar_plot(df, x_value, y_value, an_title, y_name, color_name, file_path) -> None:
     """
     :param df: dataFrame object
     :param x_value: str     for x axis
@@ -16,7 +16,7 @@ def bar_plot(df, x_value, y_value, an_title, color_name, file_path) -> None:
     :return: None
     """
     fig = px.bar(df, x=x_value, y=y_value, barmode='group', color=color_name,
-                 labels={"variable": "", "value": "Antal / Amount"},
+                 labels={"variable": "", "value": y_name},
                  title=an_title)
     plotly.offline.plot(fig, filename=file_path)
 

@@ -1,6 +1,4 @@
-
 import pandas as pd
-df = pd.read_csv(r"../data/AAPL_TIME_SERIES_DAILY.csv")
 
 class StockDataLocal:
     """Class method to get and process local stock data"""
@@ -10,7 +8,6 @@ class StockDataLocal:
 
     def stock_dataframe(self, stockname: str) -> list:
         """
-
         Returns:
             list of two dataframes, one for daily time series, one for interdaily
         """
@@ -24,3 +21,4 @@ class StockDataLocal:
             stock_df_list.append(stock)
 
         return stock_df_list
+        

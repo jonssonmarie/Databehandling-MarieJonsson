@@ -14,6 +14,7 @@ openpyxl = "*"
 python-dotenv = "*"
 requests = "*"
 dash = "*"
+dash-bootstrap-components = "*"
 
 [dev-packages]
 ipykernel = "*"
